@@ -13,10 +13,12 @@ const images = [
   },
 ];
 
-
-for (const i = 0; i < images.length; i++){
-  var ulItem = document.createElement('li');
-  ulItem.textContent = ingredients[i];
-  ulItem.classList.add('item');
-  console.log(ulItem);
-}
+const addedImages = images.map(({ url, alt }) =>
+  `<li><img src=${url} alt=${alt} width=200 height=200></li>`
+);
+const list = document.querySelector('.gallery');
+list.style.margin = 0;
+list.style.padding = 0;
+// list.style.display = flex;
+//list.style.listStyleType = none;
+list.insertAdjacentHTML("afterbegin", addedImages);

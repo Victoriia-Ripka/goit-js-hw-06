@@ -12,3 +12,11 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+for (const i = 0; i < images.length; i++){
+  var ulItem = document.createElement('li');
+  ulItem.textContent = ingredients[i];
+  ulItem.classList.add('item');
+  console.log(ulItem);
+}
